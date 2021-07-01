@@ -9,6 +9,7 @@ export class Tooltip {
     private readonly title: JQuery;
     private readonly description: JQuery;
     private readonly group: Selection<SVGGElement, any, any, any>;
+    private url: string = null;
 
     constructor(element: JQuery,
                 title: string,
@@ -115,14 +116,21 @@ export class Tooltip {
                 display: "flex"
             }).animate({opacity: 1});
 
-            this.element.on({
+            let events = {
                 mouseenter: () => {
                     $(this.element).stop(true, false).fadeTo(200, 1);
                 },
                 mouseleave: () => {
                     this.element.delay(200).fadeOut(400, () => this.element.remove());
                 }
-            });
+            };
+
+            if (this.url !== null)
+                events["click"] = () => {
+                        window.open(this.url, '_blank').focus();
+                    }
+
+            this.element.on(events);
         } else {
             $(this.element).stop(true, false).fadeTo(200, 1);
         }
@@ -136,6 +144,7 @@ export class Tooltip {
 
     addLink(url: string) {
         this.element.addClass("clickable");
+        this.url = url;
         this.element.on("click", () => {
             window.open(url, '_blank').focus();
         });
