@@ -1,0 +1,45 @@
+@import "mainVariables";
+
+#arrow {
+  fill: #C3C3C3;
+}
+
+.edge {
+  path {
+    fill: none;
+    stroke: #737373;
+    stroke-width: 1px;
+    stroke-opacity: 0.4;
+  }
+
+  text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+  }
+
+  &.edge-default {
+    rect {
+      fill: $graphDefaultColor;
+    }
+
+    text {
+      fill: #080808;
+    }
+  }
+
+  &.edge-wiki {
+    rect {
+      fill: $graphWikiColor;
+    }
+
+    text {
+      fill: #fff;
+    }
+  }
+
+  &.hover, &.active {
+    path {
+      stroke-width: 2px;
+    }
+  }
+}

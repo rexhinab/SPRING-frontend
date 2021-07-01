@@ -1,0 +1,40 @@
+@import "mainVariables";
+
+.tab-container {
+  margin-bottom: -4px;
+  user-select: none;
+
+  & + div {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.tab-item {
+  position: relative;
+  background-color: #F8F8F8;
+  font-family: $fontFamily;
+  font-weight: normal;
+  font-size: 15px;
+  color: #007EA0;
+  padding: 10.5px 44px 12.5px;
+  border-radius: 4px 4px 0 0;
+  border-width: 0;
+  outline: none;
+
+  &:hover {
+    background-color: #C6DFE6;
+    color: #007EA0;
+    cursor: pointer;
+  }
+
+  &.active {
+    background-color: #007EA0;
+    color: #FFFFFF;
+
+    &:hover {
+      background-color: #3398B3;
+      color: #FFFFFF;
+    }
+  }
+}

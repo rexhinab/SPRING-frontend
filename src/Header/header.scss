@@ -1,0 +1,63 @@
+@import "mainVariables";
+
+.logo {
+  // white image
+  filter: brightness(0) invert(1);
+  width: auto;
+  max-height: 40px;
+  margin-left: 40px;
+  float: left;
+}
+
+.header {
+  background-color: $primaryColor;
+  font-family: $fontFamily;
+  font-weight: $fontMediumWeight;
+  font-size: 15px;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+
+  .link-container {
+    display: flex;
+    vertical-align: middle;
+    margin-right: 5%;
+
+    a {
+      padding: 10px 15px;
+      margin: auto 0;
+      color: #FFFFFF;
+      text-decoration: none;
+
+      &:link, &:visited, &:active, &:hover, &:focus {
+        color: #FFFFFF;
+      }
+
+      &:hover, &:focus {
+        background-color: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  &.homepage {
+    background-color: #FFFFFF;
+
+    .logo-container, .logo {
+      visibility: hidden;
+    }
+
+    .link-container a {
+      color: $primaryColor;
+
+      &:link, &:visited, &:active, &:hover, &:focus {
+        color: $primaryColor;
+      }
+
+      &:hover, &:focus {
+        background-color: rgba(0, 126, 160, 0.15);
+      }
+    }
+  }
+}

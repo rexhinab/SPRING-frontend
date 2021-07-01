@@ -1,0 +1,102 @@
+@import "mainVariables";
+$tooltipTextColor: #333333;
+
+.tooltip {
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 5px;
+  width: 340px;
+  padding: 14px;
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+
+  .title, .description {
+    color: $tooltipTextColor;
+    font-family: $fontFamily;
+
+    a {
+      &:link, &:visited, &:active, &:hover, &:focus {
+        text-decoration: none;
+        color: $tooltipTextColor;
+      }
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .description {
+    font-weight: normal;
+    font-size: 13px;
+    margin: 3px 0 0;
+    max-height: 80px;
+    overflow: auto;
+    white-space: pre-line;
+  }
+
+  .image {
+    border: 0.5px solid #6C6C6C;
+    border-radius: 6px;
+    width: 56px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  .title-description-container {
+    flex-grow: 1;
+  }
+  
+  &.clickable {
+    cursor: pointer;
+  }
+}
+
+.tag {
+  position: absolute;
+  top: 13.03px;
+  right: 3.38px;
+  padding: 1px 4px;
+  font-family: $fontFamily;
+  font-weight: $fontMediumWeight;
+  font-size: 8px;
+  line-height: 10px;
+  display: table-cell;
+  vertical-align: middle;
+  height: 10px;
+  color: #FFFFFF;
+  margin: 0;
+
+  &:before {
+    content:"";
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    position: absolute;
+    top:0;
+    left: -12px;
+  }
+
+  &.tag-wiki {
+    background-color: $graphWikiColor;
+
+    &:before {
+      border-right: 6px solid $graphWikiColor;
+    }
+  }
+
+  &.tag-predicate {
+    background-color: $graphPredicateColor;
+
+    &:before {
+      border-right: 6px solid $graphPredicateColor;
+    }
+  }
+}

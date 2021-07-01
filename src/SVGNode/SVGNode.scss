@@ -1,0 +1,88 @@
+@import "mainVariables";
+
+.node {
+  cursor: pointer;
+
+  rect {
+    fill: #fff;
+    stroke-width: 2px;
+  }
+
+  &.node-default {
+    rect {
+      stroke: $graphDefaultColor;
+    }
+
+    rect.node-id-bg {
+      fill: $graphDefaultColor !important;
+    }
+
+    &.hover, &.active {
+      rect {
+        fill: $graphDefaultHover;
+      }
+    }
+  }
+
+  &.node-predicate {
+    rect {
+      stroke: $graphPredicateColor;
+    }
+
+    rect.node-id-bg {
+      fill: $graphPredicateColor !important;
+    }
+
+    &.hover, &.active {
+      rect {
+        fill: $graphPredicateHover;
+      }
+    }
+  }
+
+  &.node-wiki {
+    rect {
+      stroke: $graphWikiColor;
+    }
+
+    rect.node-id-bg {
+      fill: $graphWikiColor !important;
+    }
+
+    &.hover, &.active {
+      rect {
+        fill: $graphWikiHover;
+      }
+    }
+  }
+
+  rect.node-id-bg {
+    stroke-width: 0;
+  }
+
+  text {
+    font-family: $fontFamily;
+    font-weight: $fontMediumWeight;
+    font-size: 11px;
+    fill: $fontColor;
+    dominant-baseline: central;
+
+    &.node-id-text {
+      fill: #F8F8F8;
+    }
+
+    &.centered {
+      text-anchor: middle;
+    }
+  }
+
+  &.hover, &.active {
+    rect {
+      stroke-width: 4px;
+    }
+
+    rect.node-id-bg {
+      stroke-width: 0;
+    }
+  }
+}

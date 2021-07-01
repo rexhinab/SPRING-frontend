@@ -1,0 +1,63 @@
+@import "mainVariables";
+
+.alert {
+  position: relative;
+  z-index: 2;
+  padding: 14px 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  font-family: $fontFamily;
+
+  .title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: $fontMediumWeight;
+    display: block;
+  }
+
+  .alert-body {
+    font-size: 15px;
+    color: $fontColor;
+
+    .title {
+      font-weight: normal;
+    }
+  }
+
+  &.alert-info {
+    background-color: $colorInfoLight;
+    border-color: $colorInfo;
+
+    .title {
+      color: $colorInfo;
+    }
+  }
+
+  &.alert-error {
+    background-color: $colorErrorLight;
+    border-color: $colorErrorBorder;
+
+    .title {
+      color: $colorError;
+    }
+  }
+
+  &.alert-success {
+    background-color: $colorSuccessLight;
+    border-color: $colorSuccess;
+
+    .title {
+      color: $colorSuccess;
+    }
+  }
+
+  &.alert-warning {
+    background-color: $colorWarningLight;
+    border-color: $colorWarning;
+
+    .title {
+      color: $colorWarning;
+    }
+  }
+}

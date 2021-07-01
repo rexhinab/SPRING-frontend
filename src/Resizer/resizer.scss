@@ -1,0 +1,15 @@
+.resizer {
+  background-color: #D3D3D3;
+  width: 1px;
+  cursor: ew-resize;
+  height: 100%;
+
+  &:hover, &.resizing {
+    margin-left: -1px;
+    width: 3px;
+  }
+}
+
+.resizing {
+  cursor: col-resize !important;
+}
