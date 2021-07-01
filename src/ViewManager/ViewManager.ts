@@ -143,8 +143,6 @@ export class ViewManager {
                 this.errorHandler({readyState: 0}, textAndError)
                 return;
             }
-            $("button").addClass("loading-cursor");
-            $("body").addClass("loading-cursor");
 
             // const testData = JSON.parse('{"sentence":"After seeing that YouTube video I wonder, what does the fox say?", "triples": [["z0", ":instance", "wonder-01"], ["z0", ":ARG0", "z1"], ["z1", ":instance", "i"], ["z0", ":ARG1", "z2"], ["z2", ":instance", "say-01"], ["z2", ":ARG0", "z3"], ["z3", ":instance", "fox"], ["z2", ":ARG1", "z4"], ["z4", ":instance", "amr-unknown"], ["z0", ":time", "z5"], ["z5", ":instance", "after"], ["z5", ":op1", "z6"], ["z6", ":instance", "see-01"], ["z6", ":ARG0", "z1"], ["z6", ":ARG1", "z7"], ["z7", ":instance", "video"], ["z7", ":medium", "z8"], ["z8", ":instance", "publication"], ["z8", ":wiki", "\\"YouTube\\""], ["z8", ":name", "z9"], ["z9", ":instance", "name"], ["z9", ":op1", "\\"YouTube\\""], ["z7", ":mod", "z10"], ["z10", ":instance", "that"]], "penman": "(z0 / wonder-01\\n    :ARG0 (z1 / i)\\n    :ARG1 (z2 / say-01\\n              :ARG0 (z3 / fox)\\n              :ARG1 (z4 / amr-unknown))\\n    :time (z5 / after\\n              :op1 (z6 / see-01\\n                       :ARG0 z1\\n                       :ARG1 (z7 / video\\n                                 :medium (z8 / publication\\n                                             :wiki \\"YouTube\\"\\n                                             :name (z9 / name\\n                                                       :op1 \\"YouTube\\"))\\n                                 :mod (z10 / that)))))", "penman_id": 60, "sentence_id": 60, "predicates": {"wonder-01": {"desc": "think about, ponder", "examples": ["At the same time, the sheer size of the loss, coupled with a slowing of orders, made some securities analysts wonder just howstrong that turnaround will be at the computer maker anddefense-electronics concern.", "Not everyone is reacting so calmly, however, and many wonder about the long-term implications of what is widely viewed as thecause of Friday\'s slide, reluctance by banks to provide financingfor a buy-out of UAL Corp., parent of United Airlines."], "bn": ["bn:00087656v", "bn:00092265v"], "args": [["ARG0: thinker", "ARG1: thought"]]}, "say-01": {"desc": "say", "examples": ["A Lorillard spokeswoman said \\"This is an old story.\\"", "[Kent cigarettes were sold]-1, the company said *trace*-1", "[What matters is what advertisers will pay]-1, said *trace*-1 Newsweek\'s chairman", "S-[\\"What you have to understand,\\" said John [*?*], \\"is that Philly literally stinks.\\"]", "John said to Mary: \\"you\'re an idiot.\\"", "\\"Well that\'s odd,\\" said John of the disappearance of his nose.", "John-1 is said *trace*-1 to be an idiot."], "bn": ["bn:00087644v", "bn:00093293v", "bn:00093290v", "bn:00082527v", "bn:00093287v", "bn:00082800v"], "args": [["ARG0: Sayer", "ARG1: Utterance", "ARG2: Hearer", "ARG3: Attributive"]]}, "see-01": {"desc": "view", "examples": ["John saw the President.", "John saw that the President collapsed.", "John saw the President as a fool."], "bn": ["bn:00087701v", "bn:00088205v", "bn:00093437v", "bn:00084662v", "bn:00085683v", "bn:00093431v", "bn:00092443v", "bn:00082813v", "bn:00085647v", "bn:00093430v", "bn:00093433v", "bn:00093432v", "bn:00087787v"], "args": [["ARG0: viewer", "ARG1: thing viewed", "ARG2: attribute of arg1, further description"]]}}, "wikis": {"YouTube": ["YouTube is an American online video-sharing platform headquartered in San Bruno, California.", "bn:02873520n"]}}\n');
             // switch (requestType) {
@@ -163,8 +161,6 @@ export class ViewManager {
                 textInput,
                 textAndError,
                 data => {
-                    $("button").removeClass("loading-cursor");
-                    $("body").removeClass("loading-cursor");
                     switch (requestType) {
                         case RequestType.SENTENCE:
                             ViewManager.SentenceToAMR(data)
@@ -208,6 +204,8 @@ export class ViewManager {
             url: this.API_URL + requestEndPoint,
             data: requestBody,
             beforeSend: () => {
+                $("button").addClass("loading-cursor");
+                $("body").addClass("loading-cursor");
                 const checkErr = $("#alert");
                 if (checkErr)
                     checkErr.remove();
@@ -216,7 +214,11 @@ export class ViewManager {
             },
             success: data => successCallback({...requestBody, ...data}),
             dataType: "json"
-        }).fail(jqXHR => ViewManager.errorHandler(jqXHR, errorContainer));
+        }).fail(jqXHR => ViewManager.errorHandler(jqXHR, errorContainer))
+            .always(() => {
+                $("button").removeClass("loading-cursor");
+                $("body").removeClass("loading-cursor");
+            });
     }
 
     private static SentenceToAMR(data: {
