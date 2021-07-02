@@ -43,7 +43,7 @@ export class ViewManager {
         "                                             :name (z9 / name\n" +
         "                                                       :op1 \"YouTube\"))\n" +
         "                                 :mod (z10 / that)))))";
-    static readonly API_URL = 'http://' + window.location.host + "/";
+    static readonly API_URL = "http://nlp.uniroma1.it/spring/";
     private static currentRequest = null;
 
     private constructor() {
@@ -59,9 +59,9 @@ export class ViewManager {
         } else if (body.data("title") === "api-doc") {
             // api-documentation.html
             $("main").addClass('justify-center');
-            $("pre").each((i, obj) => {
-                $(obj).text($(obj).text().replace("SPRING_URL", window.location.host));
-            })
+            // $("pre").each((i, obj) => {
+            //     $(obj).text($(obj).text().replace("SPRING_URL", window.location.host));
+            // });
         }
     }
 
