@@ -122,13 +122,12 @@ export class Tooltip {
                 },
                 mouseleave: () => {
                     this.element.delay(200).fadeOut(400, () => this.element.remove());
+                },
+                click: () => {
+                    if (this.url !== null)
+                        window.open(this.url, '_blank');
                 }
             };
-
-            if (this.url !== null)
-                events["click"] = () => {
-                        window.open(this.url, '_blank').focus();
-                    }
 
             this.element.on(events);
         } else {
@@ -145,8 +144,5 @@ export class Tooltip {
     addLink(url: string) {
         this.element.addClass("clickable");
         this.url = url;
-        this.element.on("click", () => {
-            window.open(url, '_blank').focus();
-        });
     }
 }
