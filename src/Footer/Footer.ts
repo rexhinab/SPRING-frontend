@@ -71,7 +71,7 @@ export class Footer {
           .text("European Language Grid")
       )
       .append(
-        ` (Universal Semantic Annotator, USeA project No. ${ELG_PROJECT})`
+        `  project No. ${ELG_PROJECT} (Universal Semantic Annotator, USeA)`
       )
       .append(
         " under the European Union's Horizon 2020 research and innovation programme."
