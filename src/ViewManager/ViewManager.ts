@@ -285,7 +285,7 @@ export class ViewManager {
     prevButton.addLeftChevron();
     const nextButton = new Button(next, ButtonType.MINI_OUTLINE, "Next", true);
     nextButton.addRightChevron();
-    const updateButton = new Button(update, ButtonType.MINI, "VIEW GRAPH");
+    const updateButton = new Button(update, ButtonType.MINI, "VIEW CHANGES");
     const modifyButton = new Button(modify, ButtonType.MINI, "SUBMIT CHANGES");
     new Resizer(resizer);
     const graph = new SVGGraph();

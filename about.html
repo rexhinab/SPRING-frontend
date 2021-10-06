@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>About | Spring</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/SPRING.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/SPRING.min.css" />
     <script src="SPRING.js" defer></script>
-</head>
-<body data-title="about">
-<header></header>
-<main id="content" class="container">
-    <div class="about-container">
-        <h1>About</h1>
-        <p>SPRING (Symmetric ParsIng aNd Generation) is a state-of-the-art sequence-to-sequence model for parsing a sentence into an <a href="https://amr.isi.edu/" target="_blank">Abstract Meaning Representation</a> (AMR) and, vice versa, generating a sentence from a given AMR graph, without many cumbersome external components.</p>
-        <p>SPRING model provided on this demonstration is trained on the concatenation of the AMR 3.0 corpus and the BioAMR, to offer a higher generalizability across different domains and genres. </p>
-        <p>This website provides:</p>
-        <ul>
-            <li>A Web interface for parsing a sentence into an AMR graph or generating a sentence given the AMR graph in a PENMAN serialized format.</li>
-            <li>A RESTful API to programmatically perform AMR parsing or generation.</li>
-            <li>A feedback system to suggest modifications of the SPRING output.</li>
+  </head>
+  <body data-title="about">
+    <div class="wrapper">
+      <header></header>
+      <main id="content" class="container">
+        <div class="about-container">
+          <h1>About</h1>
+          <p>
+            SPRING (Symmetric ParsIng aNd Generation) is a state-of-the-art
+            sequence-to-sequence model for parsing a sentence into an
+            <a href="https://amr.isi.edu/" target="_blank"
+              >Abstract Meaning Representation</a
+            >
+            (AMR) and, vice versa, generating a sentence from a given AMR graph,
+            without many cumbersome external components.
+          </p>
+          <p>
+            SPRING model provided on this demonstration is trained on the
+            concatenation of the AMR 3.0 corpus and the BioAMR, to offer a
+            higher generalizability across different domains and genres.
+          </p>
+          <p>This website provides:</p>
+          <ul>
+            <li>
+              A Web interface for parsing a sentence into an AMR graph or
+              generating a sentence given the AMR graph in a PENMAN serialized
+              format.
+            </li>
+            <li>
+              A RESTful API to programmatically perform AMR parsing or
+              generation.
+            </li>
+            <li>
+              A feedback system to suggest modifications of the SPRING output.
+            </li>
             <li>Bibliography and model download section.</li>
-        </ul>
-        <h3>PUBLICATIONS</h3>
-        <p><a target="_blank" href="mailto:bevilacqua@di.uniroma1.it">Michele Bevilacqua</a>, <a target="_blank" href="mailto:blloshmi@di.uniroma1.it">Rexhina Blloshmi</a>, <a target="_blank" href="mailto:navigli@diag.uniroma1.it">Roberto Navigli</a>. <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17489" target="_blank">One SPRING to Rule Them Both: Symmetric AMR Semantic Parsing and Generation without a Complex Pipeline</a>. Proceedings of the AAAI Conference on Artificial Intelligence (AAAI 2021), 35(14), 12564-12573.</p>
-        <h3>ACKNOWLEDGMENTS</h3>
-        <p>The authors gratefully acknowledge the support of the ERC Consolidator Grant MOUSSE No. 726487 and the ELEXIS project No. 731015 under the European Union’s Horizon 2020 research and innovation programme.</p>
-        <h3>LICENSE</h3>
-        <p>SPRING is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0 License</a>.</p>
+          </ul>
+          <h3>PUBLICATIONS</h3>
+          <p>
+            <a target="_blank" href="mailto:bevilacqua@di.uniroma1.it"
+              >Michele Bevilacqua</a
+            >,
+            <a target="_blank" href="mailto:blloshmi@di.uniroma1.it"
+              >Rexhina Blloshmi</a
+            >,
+            <a target="_blank" href="mailto:navigli@diag.uniroma1.it"
+              >Roberto Navigli</a
+            >.
+            <a
+              href="https://ojs.aaai.org/index.php/AAAI/article/view/17489"
+              target="_blank"
+              >One SPRING to Rule Them Both: Symmetric AMR Semantic Parsing and
+              Generation without a Complex Pipeline</a
+            >. Proceedings of the AAAI Conference on Artificial Intelligence
+            (AAAI 2021), 35(14), 12564-12573.
+          </p>
+          <h3>ACKNOWLEDGMENTS</h3>
+          <p>
+            The authors gratefully acknowledge the support of the ERC
+            Consolidator Grant MOUSSE No. 726487, the ELEXIS project No. 731015
+            and European Language Grid (Universal Semantic Annotator, USeA
+            project No. 825627) under the European Union's Horizon 2020 research
+            and innovation programme.
+          </p>
+          <h3>LICENSE</h3>
+          <p>
+            SPRING is licensed under the
+            <a
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+              target="_blank"
+              >CC BY-NC-SA 4.0 License</a
+            >.
+          </p>
+        </div>
+      </main>
+      <footer></footer>
     </div>
-</main>
-<footer></footer>
-</body>
+  </body>
 </html>
